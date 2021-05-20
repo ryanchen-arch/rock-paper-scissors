@@ -24,9 +24,12 @@ function game() {
             pScore++;
             console.log("result: player wins!");
         }
-        else {
+        else if (let === "c") {
             cScore++;
             console.log("result: computer wins!");
+        }
+        else {
+            console.log("result: draw!");
         }
         
     }
