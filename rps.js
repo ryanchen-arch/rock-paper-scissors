@@ -11,6 +11,31 @@ function playRound(pSelection, cSelection) {
         else if (cSelection === "scissors") {
             return "p";
         }
+        else {
+            return null;
+        }
+    }
+    else if (pSelection.toLowerCase() === "paper") {
+        if (cSelection === "scissors") {
+            return "c";
+        }
+        else if (cSelection === "rock") {
+            return "p";
+        }
+        else {
+            return null;
+        }
+    }
+    else {
+        if (cSelection === "rock") {
+            return "c";
+        }
+        else if (cSelection === "paper") {
+            return "p";
+        }
+        else {
+            return null;
+        }
     }
 }
 function game() {
@@ -20,11 +45,11 @@ function game() {
         let pSelection = prompt("Rock, paper, scissors!");
         let cSelection = computerPlay();
         let result = playRound(pSelection, cSelection);
-        if (let === "p") {
+        if (result === "p") {
             pScore++;
             console.log("result: player wins!");
         }
-        else if (let === "c") {
+        else if (result === "c") {
             cScore++;
             console.log("result: computer wins!");
         }
@@ -32,5 +57,14 @@ function game() {
             console.log("result: draw!");
         }
         
+    }
+    if (cScore > pScore) {
+        console.log("total result: computer wins!");
+    }
+    else if (pScore > cScore) {
+        console.log("total result: player wins!");
+    }
+    else {
+        console.log("total result: draw!");
     }
 }
